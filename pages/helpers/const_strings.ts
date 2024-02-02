@@ -1,0 +1,18 @@
+export const Colors = {
+    cherry: "#F9193F",
+    mars: "#F19037",
+    meteor: "#FFE3C8",
+    atlantis100: "#78B500",
+    atlantis30: "#D6E8B2",
+    white: "#ffffff",
+    genoa: "#005D41",
+    genoa30: "#B2CEC6",
+    black: "#231F20",
+    disableLight: "#DDDADA",
+    disableBold: "#7B6F72",
+    black15: 'rgba(0, 0, 0, 0.15)',
+    info: '#0D6EFD',
+    warning: '#FFC107',
+    success: '#198754',
+    danger: '#DC3545',
+}
