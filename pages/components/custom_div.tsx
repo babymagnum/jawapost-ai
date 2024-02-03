@@ -9,11 +9,12 @@ interface CustomDivProps {
     paddingHorizontal?: number
     paddingVertical?: number
     style?: CSSProperties | undefined
+    onDivClick?: () => void
 }
 
-export const CustomDiv: FC<CustomDivProps> = ({ children, useShadow = true, borderRadius = 6, backgroundColor = Colors.white, style, paddingHorizontal, paddingVertical }) => {
+export const CustomDiv: FC<CustomDivProps> = ({ children, useShadow = true, borderRadius = 6, backgroundColor = Colors.white, style, paddingHorizontal, paddingVertical, onDivClick }) => {
     return (
-        <div style={{ ...style, borderRadius: borderRadius, paddingLeft: paddingHorizontal, paddingRight: paddingHorizontal, paddingTop: paddingVertical, paddingBottom: paddingVertical, backgroundColor: backgroundColor, boxShadow: useShadow ? '0px 3px 8px 0px #0000001A' : '' }}>
+        <div onClick={onDivClick} style={{ ...style, borderRadius: borderRadius, paddingLeft: paddingHorizontal, paddingRight: paddingHorizontal, paddingTop: paddingVertical, paddingBottom: paddingVertical, backgroundColor: backgroundColor, boxShadow: useShadow ? '0px 3px 8px 0px #0000001A' : '' }}>
             {children}
         </div>
     )

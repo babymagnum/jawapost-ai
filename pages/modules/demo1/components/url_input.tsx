@@ -75,7 +75,7 @@ export const UrlInput: FC<UrlInputProps> = ({ onProcessResult, urlState, setUrlS
                 </div>
             )} />
             {errorUrl !== '' &&
-                <p style={{ marginTop: 6, fontSize: 12, color: 'darkorange' }}>{errorUrl}</p>}
+                <p style={{ marginTop: 6, fontSize: 12, color: Colors.danger }}>{errorUrl}</p>}
         </>
     )
 }

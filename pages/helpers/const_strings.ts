@@ -9,6 +9,7 @@ export const Colors = {
     genoa30: "#B2CEC6",
     black: "#231F20",
     disableLight: "#DDDADA",
+    disableLight20: "#DDDADA33",
     disableBold: "#7B6F72",
     black15: 'rgba(0, 0, 0, 0.15)',
     info: '#0D6EFD',
