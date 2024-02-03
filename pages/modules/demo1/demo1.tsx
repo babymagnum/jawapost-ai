@@ -18,7 +18,7 @@ export const Demo1: FC<Demo1Props> = () => {
     const [chatBoxVisible, setChatBoxVisible] = useState(false)
 
     return (
-        <div style={{ paddingLeft: '15vw', paddingRight: '15vw', marginTop: '5vh' }}>
+        <div style={{ paddingLeft: '15vw', overflowX: 'hidden', paddingRight: '15vw', marginTop: '5vh' }}>
             <UrlInput
                 onProcessResult={(result: Demo1Result) => {
                     setResult(result)
@@ -27,7 +27,7 @@ export const Demo1: FC<Demo1Props> = () => {
                 setUrlState={setUrlState} />
             <ResultContent result={result} />
             <CustomDiv onDivClick={() => setChatBoxVisible(true)} borderRadius={1000} backgroundColor={Colors.genoa} style={{position: 'absolute', width: 56, height: 56, justifyContent: 'center', alignItems: 'center', display: 'flex', bottom: 24, right: 24}} children={(<IcChatBot width={26} height={26} fill={Colors.white} />)} />
-            <Chatbox setVisible={setChatBoxVisible} visible={chatBoxVisible} />
+            <Chatbox isArticleExist={result.klasifikasi !== undefined} setVisible={setChatBoxVisible} visible={chatBoxVisible} />
         </div>
     )
 }

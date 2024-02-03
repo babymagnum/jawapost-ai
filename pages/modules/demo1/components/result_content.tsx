@@ -8,10 +8,7 @@ interface ResultContentProps {
 export const ResultContent: FC<ResultContentProps> = ({ result }) => {
     return (
         <>
-            <p>{result.klasifikasi}</p>
-            <p>{result.labelling}</p>
-            <p>{result.kategori}</p>
-            <p>{result.sentiment}</p>
+            <p style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>{result.klasifikasi}</p>
         </>
     )
 }
