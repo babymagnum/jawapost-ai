@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { HNSWLib } from "langchain/vectorstores/hnswlib";
 import { chatModel, embeddings } from "../helpers/openai_instance";
-import { HumanMessage, SystemMessage } from "langchain/schema";
+import { HumanMessage, SystemMessage, AIMessage } from "langchain/schema";
 import { chatbotArticlePrompts } from "./prompts/chatbot_article_prompts";
 import { StandartModel } from "./model/standart_model";
 import { existsSync } from 'node:fs';
@@ -10,7 +10,11 @@ const articleTempDir = '././url-sources/temp-berita'
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<StandartModel>) {
     const query = request.body.query ?? '';
+    const lastAIMessage = request.body.lastAIMessage ?? '';
+    const lastUserMessage = request.body.lastUserMessage ?? '';
 
+    console.log(`lastAIMessage ==> ${lastAIMessage}`)
+    console.log(`lastUserMessage ==> ${lastUserMessage}`)
     try {
         if (!existsSync(articleTempDir)) {
             setResponseError(500, 'Anda belum mencari article!, silakan cari article terlebih dahulu', response)
@@ -23,10 +27,18 @@ export default async function handler(request: NextApiRequest, response: NextApi
         );
         console.timeEnd('load method');
 
+        const lastResponseArray: (HumanMessage | AIMessage)[] = []
+
+        if (lastAIMessage !== '' && lastUserMessage !== '') {
+            lastResponseArray.push(new HumanMessage(lastUserMessage))
+            lastResponseArray.push(new AIMessage(lastAIMessage))
+        }
+
         const documents = await vectorStore.similaritySearch('');
         const data = documents.map(element => element.pageContent).toString()
         const result = await chatModel(0.3, 0.8).call([
             new SystemMessage(chatbotArticlePrompts(data)),
+            ...lastResponseArray,
             new HumanMessage(query),
         ]);
 

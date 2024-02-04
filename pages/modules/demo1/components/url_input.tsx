@@ -7,20 +7,20 @@ import IcRetry from "../../../../assets/svg/ic_retry.svg"
 import IcSearch from "../../../../assets/svg/ic_search.svg"
 import { TailSpin } from "react-loader-spinner";
 import { ExtractArticleModel } from "../../../api/model/extract_article_model";
+import { useDemo1Store } from "../demo1_store";
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-interface UrlInputProps {
-    onProcessResult: (result: Demo1Result) => void
-    urlState: RequestState
-    setUrlState: React.Dispatch<React.SetStateAction<RequestState>>
-}
-
-export const UrlInput: FC<UrlInputProps> = ({ onProcessResult, urlState, setUrlState }) => {
-    const [url, setUrl] = useState('')
-    const [errorUrl, setErrorUrl] = useState('')
+export const UrlInput = () => {
+    const url = useDemo1Store(state => state.url)
+    const errorUrl = useDemo1Store(state => state.errorUrl)
+    const setUrl = useDemo1Store(state => state.setUrl)
+    const setErrorUrl = useDemo1Store(state => state.setErrorUrl)
+    const urlState = useDemo1Store(state => state.urlState)
+    const setUrlState = useDemo1Store(state => state.setUrlState)
+    const setResult = useDemo1Store(state => state.setResult)
 
     async function proccessUrl() {
         if (url === '') {
@@ -49,7 +49,7 @@ export const UrlInput: FC<UrlInputProps> = ({ onProcessResult, urlState, setUrlS
             }
 
             // set the result
-            onProcessResult({
+            setResult({
                 klasifikasi: data.content ?? '',
                 labelling: 'labelling',
                 kategori: 'kategori',
@@ -63,7 +63,7 @@ export const UrlInput: FC<UrlInputProps> = ({ onProcessResult, urlState, setUrlS
     }
 
     return (
-        <>
+        <div style={{marginInline: '15vw'}}>
             <CustomDiv paddingHorizontal={12} paddingVertical={8} children={(
                 <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
                     <input
@@ -99,6 +99,6 @@ export const UrlInput: FC<UrlInputProps> = ({ onProcessResult, urlState, setUrlS
             )} />
             {errorUrl !== '' &&
                 <p style={{ marginTop: 6, fontSize: 12, color: Colors.danger }}>{errorUrl}</p>}
-        </>
+        </div>
     )
 }

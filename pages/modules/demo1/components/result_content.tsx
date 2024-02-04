@@ -1,14 +1,23 @@
-import { FC } from "react";
-import { Demo1Result } from "../model/demo1_result";
+import { useEffect, useRef } from "react";
+import { useDemo1Store } from "../demo1_store";
 
-interface ResultContentProps {
-    result: Demo1Result
-}
+export const ResultContent = () => {
+    const result = useDemo1Store(state => state.result)
+    const setScrollPosition = useDemo1Store(state => state.setScrollPosition)
+    const scrollPosition = useDemo1Store(state => state.scrollPosition)
+    const divRef = useRef<HTMLDivElement>()
+    
+    useEffect(() => {
+        if (divRef.current) {
+            divRef.current.scrollTop = scrollPosition
+        }
+    }, [])
 
-export const ResultContent: FC<ResultContentProps> = ({ result }) => {
     return (
-        <>
-            <p style={{whiteSpace: 'pre-wrap', overflowWrap: 'break-word'}}>{result.klasifikasi}</p>
-        </>
+        <div ref={divRef} onScroll={(event) => {            
+            setScrollPosition(event.currentTarget.scrollTop)
+        }} style={{ flex: 1, overflowY: 'auto', paddingInline: '15vw' }}>
+            <p style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>{result?.klasifikasi ?? ''}</p>            
+        </div>
     )
 }

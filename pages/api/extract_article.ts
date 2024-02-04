@@ -5,9 +5,10 @@ import { HtmlToTextTransformer } from "langchain/document_transformers/html_to_t
 import { HNSWLib } from "langchain/vectorstores/hnswlib";
 import { ExtractArticleModel } from "./model/extract_article_model";
 import { chatModel, embeddings } from "../helpers/openai_instance";
-import { data } from "cheerio/lib/api/attributes";
-import { HumanMessage, SystemMessage, AIMessage } from "langchain/schema";
+import { HumanMessage, SystemMessage } from "langchain/schema";
 import { extractDataPrompts } from "./prompts/extract_article_prompts";
+import { PuppeteerWebBaseLoader } from "langchain/document_loaders/web/puppeteer";
+import { PlaywrightWebBaseLoader } from "langchain/document_loaders/web/playwright";
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<ExtractArticleModel>) {
     const url = request.body.url || '';
@@ -47,17 +48,16 @@ async function processUrl(url: string, response: NextApiResponse<ExtractArticleM
 
     const filteredDocuments = await vectorStore.similaritySearch(title)
 
+    filteredDocuments.forEach((element, index) => {
+        console.log(`filteredDocuments ${index} ==> ${element.pageContent}`)
+    });
+
     const filteredVectorStore = await HNSWLib.fromDocuments(
         filteredDocuments, embeddings
     )
 
     await filteredVectorStore.save("././url-sources/temp-berita");
 
-    filteredDocuments.forEach((element, index) => {
-        console.log(`filteredDocuments ${index} ==> ${element.pageContent}`)
-    });
-
-    filteredDocuments
     askToOpenAI(filteredDocuments.map(element => element.pageContent).toString(), response)
 }
 
