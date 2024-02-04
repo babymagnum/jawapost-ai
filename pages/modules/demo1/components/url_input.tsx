@@ -59,11 +59,11 @@ export const UrlInput = () => {
             console.log(`fetch error: ${error}`)
             // Consider implementing your own error handling logic here
             alert(error.message);
-        }        
+        }
     }
 
     return (
-        <div style={{marginInline: '15vw'}}>
+        <div style={{ marginInline: '15vw' }}>
             <CustomDiv paddingHorizontal={12} paddingVertical={8} children={(
                 <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
                     <input
