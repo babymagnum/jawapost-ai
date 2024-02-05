@@ -17,7 +17,7 @@ export const ResultContent = () => {
         <div ref={divRef} onScroll={(event) => {            
             setScrollPosition(event.currentTarget.scrollTop)
         }} style={{ flex: 1, overflowY: 'auto', paddingInline: '15vw' }}>
-            <p style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>{result?.klasifikasi ?? ''}</p>            
+            <p style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>{result ?? ''}</p>            
         </div>
     )
 }

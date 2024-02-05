@@ -7,7 +7,7 @@ type State = {
     url: string
     errorUrl: string
     urlState: RequestState
-    result?: Demo1Result
+    result?: string
     chatBoxVisible: boolean
     query: string
     chats: ChatsModel[]
@@ -16,7 +16,7 @@ type State = {
 }
 
 type Actions = {
-    setResult: (data: Demo1Result) => void
+    setResult: (data: string) => void
     setUrl: (data: string) => void
     setErrorUrl: (data: string) => void
     setUrlState: (data: RequestState) => void

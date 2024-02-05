@@ -1,13 +1,12 @@
-import React, { FC, useState } from "react"
-import { Demo1Result } from "../model/demo1_result"
+import React, {  } from "react"
 import { RequestState } from "../../../interface/request_state";
 import { CustomDiv } from "../../../components/custom_div";
 import { Colors } from "../../../helpers/const_strings";
 import IcRetry from "../../../../assets/svg/ic_retry.svg"
 import IcSearch from "../../../../assets/svg/ic_search.svg"
 import { TailSpin } from "react-loader-spinner";
-import { ExtractArticleModel } from "../../../api/model/extract_article_model";
 import { useDemo1Store } from "../demo1_store";
+import { StandartModel } from "../../../api/model/standart_model";
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -41,7 +40,7 @@ export const UrlInput = () => {
             });
             setUrlState(response.status === 200 ? RequestState.SUCCESS : RequestState.ERROR);
 
-            const data: ExtractArticleModel = await response.json();
+            const data: StandartModel = await response.json();
 
             if (response.status !== 200) {
                 alert(data.message ?? 'error!');
@@ -49,12 +48,7 @@ export const UrlInput = () => {
             }
 
             // set the result
-            setResult({
-                klasifikasi: data.content ?? '',
-                labelling: 'labelling',
-                kategori: 'kategori',
-                sentiment: 'sentiment'
-            })
+            setResult(data.content ?? '')
         } catch (error) {
             console.log(`fetch error: ${error}`)
             // Consider implementing your own error handling logic here
