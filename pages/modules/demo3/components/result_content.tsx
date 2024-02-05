@@ -10,6 +10,7 @@ export const ResultContent = () => {
     const setScrollPosition = useDemo3Store(state => state.setScrollPosition)
     const scrollPosition = useDemo3Store(state => state.scrollPosition)
     const generateState = useDemo3Store(state => state.generateState)
+    const generateArticle = useDemo3Store(state => state.generateArticle)
     const divRef = useRef<HTMLDivElement>()
 
     useEffect(() => {
@@ -20,11 +21,11 @@ export const ResultContent = () => {
 
     if (generateState === RequestState.LOADING) {
         return (
-            <div style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <TailSpin
                     visible={true}
-                    height={20}
-                    width={20}
+                    height={32}
+                    width={32}
                     color={Colors.genoa}
                     strokeWidth={3}
                 />
@@ -33,7 +34,7 @@ export const ResultContent = () => {
     }
     else if (generateState === RequestState.ERROR) {
         return (
-            <div style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <div onClick={generateArticle} style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <IcRetry width={24} height={24} stroke={Colors.danger} />
             </div>
         )

@@ -7,8 +7,6 @@ import { ExtractArticleModel } from "./model/extract_article_model";
 import { chatModel, embeddings } from "../helpers/openai_instance";
 import { HumanMessage, SystemMessage } from "langchain/schema";
 import { extractDataPrompts } from "./prompts/extract_article_prompts";
-import { PuppeteerWebBaseLoader } from "langchain/document_loaders/web/puppeteer";
-import { PlaywrightWebBaseLoader } from "langchain/document_loaders/web/playwright";
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<ExtractArticleModel>) {
     const url = request.body.url || '';

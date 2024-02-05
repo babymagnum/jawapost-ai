@@ -13,8 +13,6 @@ export default async function handler(request: NextApiRequest, response: NextApi
     const lastAIMessage = request.body.lastAIMessage ?? '';
     const lastUserMessage = request.body.lastUserMessage ?? '';
 
-    console.log(`lastAIMessage ==> ${lastAIMessage}`)
-    console.log(`lastUserMessage ==> ${lastUserMessage}`)
     try {
         if (!existsSync(articleTempDir)) {
             setResponseError(500, 'Anda belum mencari article!, silakan cari article terlebih dahulu', response)

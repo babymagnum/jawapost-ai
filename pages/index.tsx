@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { Colors } from './helpers/const_strings';
-import { FC, useMemo, useState } from 'react';
-import MemoDemo1 from './modules/demo1/demo1';
-import MemoDemo2 from './modules/demo2/demo2';
-import MemoDemo3 from './modules/demo3/demo3';
+import { FC, useState } from 'react';
+import Demo1 from './modules/demo1/demo1';
+import Demo2 from './modules/demo2/demo2';
+import Demo3 from './modules/demo3/demo3';
 
 export default function Home() {
   const [index, setIndex] = useState(0)
@@ -33,12 +33,12 @@ export default function Home() {
         </div>
         <div style={{ width: 1, height: '100%', backgroundColor: Colors.disableLight }} />
         {
-            [
-              <MemoDemo1 />,
-              <MemoDemo2 />,
-              <MemoDemo3 />
-            ][index]
-          }
+          [
+            <Demo1 />,
+            <Demo2 />,
+            <Demo3 />
+          ][index]
+        }
       </div>
     </>
   );

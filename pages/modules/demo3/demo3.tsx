@@ -16,8 +16,8 @@ const Demo3: FC<Demo3Props> = () => {
     }
 
     return (
-        <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden', marginTop: '5vh' }}>
-            <h1 style={{marginInline: '15vw', marginTop: 0, marginBottom: 10}}>Generate Article</h1>
+        <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden' }}>
+            <h1 style={{marginInline: '15vw', marginBottom: 10}}>Generate Article</h1>
             {inputItem.map((element, index) => (
                 <InputItem input={element} index={index} />
             ))}

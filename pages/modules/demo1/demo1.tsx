@@ -1,4 +1,4 @@
-import { FC, UIEventHandler, memo, useEffect, useRef, UIEvent } from "react";
+import { memo } from "react";
 import { Colors } from "../../helpers/const_strings";
 import { CustomDiv } from "../../components/custom_div";
 import { UrlInput } from "./components/url_input";
@@ -11,7 +11,7 @@ const Demo1 = () => {
     const setChatBoxVisible = useDemo1Store(state => state.setChatBoxVisible)    
 
     return (
-        <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden', marginTop: '5vh' }}>
+        <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden', marginTop: '3vh' }}>
             <UrlInput />
             <ResultContent />
             <CustomDiv onDivClick={() => setChatBoxVisible(true)} borderRadius={1000} backgroundColor={Colors.genoa} style={{ position: 'absolute', width: 56, height: 56, justifyContent: 'center', alignItems: 'center', display: 'flex', bottom: 24, right: 24 }} children={(<IcChatBot width={26} height={26} fill={Colors.white} />)} />
