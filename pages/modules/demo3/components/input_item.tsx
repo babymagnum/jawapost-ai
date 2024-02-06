@@ -18,7 +18,7 @@ export const InputItem: FC<InputItemProps> = ({ input, index }) => {
     const deleteInput = useDemo3Store(state => state.deleteInput)
 
     return (
-        <CustomDiv style={{ marginTop: index === 0 ? 0 : 8, marginInline: '15vw' }} paddingHorizontal={12} paddingVertical={8} children={(
+        <CustomDiv style={{ marginTop: index === 0 ? 0 : 8, marginInline: '10vw' }} paddingHorizontal={12} paddingVertical={8} children={(
             <div style={{ flexDirection: 'row', gap: 10, display: 'flex', alignItems: 'center' }}>
                 <input
                     value={input}

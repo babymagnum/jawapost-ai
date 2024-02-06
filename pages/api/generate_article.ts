@@ -18,7 +18,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
 
         response.status(200).json({
             message: 'Success',
-            content: result.content
+            content: result.content.toString()
         })
     } catch (error) {
         console.log(error)

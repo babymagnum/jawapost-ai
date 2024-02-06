@@ -29,5 +29,5 @@ Jika artikel asli memiliki judul yang kurang menarik, cobalah untuk membuat judu
 Jangan mengganti bahasa, apabila article/berita awal menggunakan bahasa indonesia, maka gunakanlah kembali bahasa indonesia untuk menulis ulang article/berita nya
 
 10. Sunting dan Perbaiki
-Selalu lakukan proses penyuntingan untuk memeriksa tata bahasa, ejaan, dan kejelasan tulisan. Hilangkan kalimat yang tidak relevan dengan penulisan artikel/berita
+Hilangkan kalimat yang tidak relevan dengan penulisan artikel/berita, baik itu iklan maupun ajakan untuk membaca artikel yang lain
 `

@@ -57,7 +57,7 @@ export const UrlInput = () => {
     }
 
     return (
-        <div style={{ marginInline: '15vw' }}>
+        <div style={{ marginInline: '10vw' }}>
             <CustomDiv paddingHorizontal={12} paddingVertical={8} children={(
                 <div style={{ flexDirection: 'row', display: 'flex', alignItems: 'center' }}>
                     <input

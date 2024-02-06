@@ -17,11 +17,11 @@ const Demo3: FC<Demo3Props> = () => {
 
     return (
         <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden' }}>
-            <h1 style={{marginInline: '15vw', marginBottom: 10}}>Generate Article</h1>
+            <h1 style={{marginInline: '10vw', marginBottom: 10}}>Generate Article</h1>
             {inputItem.map((element, index) => (
                 <InputItem input={element} index={index} />
             ))}
-            <div style={{ flexDirection: 'row', gap: 10, display: 'flex', marginInline: '15vw', marginTop: 10 }}>
+            <div style={{ flexDirection: 'row', gap: 10, display: 'flex', marginInline: '10vw', marginTop: 10 }}>
                 <button disabled={disableAction()} onClick={() => {
                     addInput('')
                 }} style={{ paddingInline: 16, paddingBlock: 4, backgroundColor: disableAction() ? Colors.disableBold : Colors.genoa, border: 0, outline: 0, borderRadius: 6, color: Colors.white }}>

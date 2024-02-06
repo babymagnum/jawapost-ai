@@ -16,7 +16,7 @@ export const ResultContent = () => {
     return (
         <div ref={divRef} onScroll={(event) => {            
             setScrollPosition(event.currentTarget.scrollTop)
-        }} style={{ flex: 1, overflowY: 'auto', paddingInline: '15vw' }}>
+        }} style={{ flex: 1, overflowY: 'auto', paddingInline: '10vw' }}>
             <p style={{ whiteSpace: 'pre-wrap', overflowWrap: 'break-word' }}>{result ?? ''}</p>            
         </div>
     )

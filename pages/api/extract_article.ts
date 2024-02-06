@@ -67,7 +67,7 @@ async function askToOpenAI(data: string, response: NextApiResponse<ExtractArticl
 
     response.status(200).json({
         message: 'Success',
-        content: result.content
+        content: result.content.toString()
     })
 }
 

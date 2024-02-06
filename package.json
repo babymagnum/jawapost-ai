@@ -6,13 +6,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "@langchain/community": "^0.0.26",
+    "@langchain/openai": "^0.0.14",
     "add": "^2.0.6",
     "axios": "^1.5.1",
     "cheerio": "^1.0.0-rc.12",
     "date-fns": "^3.3.1",
     "hnswlib-node": "^1.4.2",
     "html-to-text": "^9.0.5",
-    "langchain": "^0.0.146",
+    "langchain": "^0.1.13",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",

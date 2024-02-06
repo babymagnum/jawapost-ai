@@ -8,7 +8,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
     const article: string = request.body.article ?? []
 
     try {    
-        const result = await chatModel(0.3, 0.8).call([
+        const result = await chatModel(0.3, 0.8).invoke([
             new SystemMessage(optimizeArticlePrompts),
             new HumanMessage(`
             ==== Artikel / Berita ====
@@ -21,7 +21,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
 
         response.status(200).json({
             message: 'Success',
-            content: result.content
+            content: result.content.toString()
         })
     } catch (error) {
         console.log(error)

@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import Demo1 from './modules/demo1/demo1';
 import Demo2 from './modules/demo2/demo2';
 import Demo3 from './modules/demo3/demo3';
+import Demo4 from './modules/demo4/demo4';
 
 export default function Home() {
   const [index, setIndex] = useState(0)
@@ -30,13 +31,18 @@ export default function Home() {
             selected={index === 2} content={'Demo 3'}
             onDivClick={() => setIndex(2)}
           />
+          <HomeMenu
+            selected={index === 3} content={'Demo 4'}
+            onDivClick={() => setIndex(3)}
+          />
         </div>
         <div style={{ width: 1, height: '100%', backgroundColor: Colors.disableLight }} />
         {
           [
             <Demo1 />,
             <Demo2 />,
-            <Demo3 />
+            <Demo3 />,
+            <Demo4 />,
           ][index]
         }
       </div>
