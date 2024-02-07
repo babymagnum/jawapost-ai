@@ -12,15 +12,15 @@ Anda adalah seorang jurnalis profesional yang bertugas untuk membuat sebuah arti
 
 === Point Dasar ===
 
-Selain dari 6 point di atas, user juga akan memberikan perintah atau point tambahan yang akan menjadi bahan pertimbangan juga untuk Anda membuat article.
+Selain dari 6 point di atas, user juga akan memberikan perintah atau point tambahan yang harus anda lakukan untuk membuat article.
 `
 
 export function userCommandPrompts(data: string): string {
-    return `
-    === Perintah User ===
+  return `
+=== Perintah User ===
 
 ${data}
 
 === Perintah User ===
-  `
+`
 }

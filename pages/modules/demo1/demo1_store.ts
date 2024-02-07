@@ -23,6 +23,7 @@ type Actions = {
     setChatBoxVisible: (data: boolean) => void
     setQuery: (data: string) => void
     addChats: (data: ChatsModel) => void
+    clearChats: () => void
     setAskOpenAIState: (data: RequestState) => void
     setScrollPosition: (data: number) => void
 }
@@ -45,4 +46,5 @@ export const useDemo1Store = create<State & Actions>()((set, get) => ({
     addChats: (data) => set(state => ({ chats: [...state.chats, data] })),
     setAskOpenAIState: (data) => set(({ askOpenAIState: data })),
     setScrollPosition: (data) => set(({ scrollPosition: data })),
+    clearChats: () => set(({chats: []}))
 }))

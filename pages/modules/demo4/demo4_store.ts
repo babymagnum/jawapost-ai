@@ -1,10 +1,9 @@
-import { create } from "zustand";
-import { RequestState } from "../../interface/request_state";
-import { StandartModel } from "../../api/model/standart_model";
-import { SearchArticleModel } from "../../api/model/search_query_model";
+import { create } from "zustand"
+import { RequestState } from "../../interface/request_state"
+import { SearchArticleModel } from "../../api/model/search_query_model"
 
 function delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 interface State {
@@ -36,7 +35,7 @@ export const useDemo4Store = create<State & Actions>()((set, get) => {
 
     async function searcharticle() {
         try {
-            set(({ articleState: RequestState.LOADING }));
+            set(({ articleState: RequestState.LOADING }))
             const response = await fetch("/api/search_article", {
                 method: "POST",
                 headers: {
@@ -45,14 +44,14 @@ export const useDemo4Store = create<State & Actions>()((set, get) => {
                 body: JSON.stringify({
                     article: get().article,
                 }),
-            });
-            set(({ articleState: response.status === 200 ? RequestState.SUCCESS : RequestState.ERROR }));
+            })
+            set(({ articleState: response.status === 200 ? RequestState.SUCCESS : RequestState.ERROR }))
 
-            const data: SearchArticleModel = await response.json();
+            const data: SearchArticleModel = await response.json()
 
             if (response.status !== 200) {
-                alert(data.message ?? 'error!');
-                return;
+                alert(data.message ?? 'error!')
+                return
             }
 
             // set the result
@@ -60,8 +59,8 @@ export const useDemo4Store = create<State & Actions>()((set, get) => {
         } catch (error) {
             console.log(`fetch error: ${error}`)
             // Consider implementing your own error handling logic here
-            alert(error.message);
-            set(({ articleState: RequestState.ERROR }));
+            alert(error.message)
+            set(({ articleState: RequestState.ERROR }))
         }
     }
 

@@ -1,15 +1,15 @@
 import React, {  } from "react"
-import { RequestState } from "../../../interface/request_state";
-import { CustomDiv } from "../../../components/custom_div";
-import { Colors } from "../../../helpers/const_strings";
+import { RequestState } from "../../../interface/request_state"
+import { CustomDiv } from "../../../components/custom_div"
+import { Colors } from "../../../helpers/const_strings"
 import IcRetry from "../../../../assets/svg/ic_retry.svg"
 import IcSearch from "../../../../assets/svg/ic_search.svg"
-import { TailSpin } from "react-loader-spinner";
-import { useDemo1Store } from "../demo1_store";
-import { StandartModel } from "../../../api/model/standart_model";
+import { TailSpin } from "react-loader-spinner"
+import { useDemo1Store } from "../demo1_store"
+import { StandartModel } from "../../../api/model/standart_model"
 
 function delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 export const UrlInput = () => {
@@ -19,7 +19,8 @@ export const UrlInput = () => {
     const setErrorUrl = useDemo1Store(state => state.setErrorUrl)
     const urlState = useDemo1Store(state => state.urlState)
     const setUrlState = useDemo1Store(state => state.setUrlState)
-    const setResult = useDemo1Store(state => state.setResult)
+    const setResult = useDemo1Store(state => state.setResult)    
+    const clearChats = useDemo1Store(state => state.clearChats)    
 
     async function proccessUrl() {
         if (url === '') {
@@ -28,7 +29,7 @@ export const UrlInput = () => {
         }
 
         try {
-            setUrlState(RequestState.LOADING);
+            setUrlState(RequestState.LOADING)
             const response = await fetch("/api/extract_article", {
                 method: "POST",
                 headers: {
@@ -37,22 +38,23 @@ export const UrlInput = () => {
                 body: JSON.stringify({
                     url: url,
                 }),
-            });
-            setUrlState(response.status === 200 ? RequestState.SUCCESS : RequestState.ERROR);
+            })
+            setUrlState(response.status === 200 ? RequestState.SUCCESS : RequestState.ERROR)
 
-            const data: StandartModel = await response.json();
+            const data: StandartModel = await response.json()
 
             if (response.status !== 200) {
-                alert(data.message ?? 'error!');
-                return;
+                alert(data.message ?? 'error!')
+                return
             }
 
             // set the result
             setResult(data.content ?? '')
+            clearChats()
         } catch (error) {
             console.log(`fetch error: ${error}`)
-            // Consider implementing your own error handling logic here
-            alert(error.message);
+            alert(error.message)
+            setUrlState(RequestState.ERROR)
         }
     }
 

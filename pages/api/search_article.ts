@@ -28,9 +28,8 @@ export default async function handler(request: NextApiRequest, response: NextApi
             console.log(`output ==> ${element.pageContent}`)
         });
 
-        const vectorStore = await HNSWLib.fromDocuments(output, embeddings);
-        const retriever = vectorStore.asRetriever()
-
+        const vectorStore = await HNSWLib.fromDocuments(output, embeddings)
+        
         const articleList: ArticleModel[] = [
             {
                 content: article1, similarityDocumentsCount: 0

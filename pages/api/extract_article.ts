@@ -52,8 +52,6 @@ async function processUrl(url: string, response: NextApiResponse<ExtractArticleM
     console.timeEnd('registerVectorStore')
 
     let splittedTitle: string[] = []
-    let filteredDocuments: DocumentInterface<Record<string, any>>[] = []
-    let finalSplittedTitle: string[] = []
 
     if (title.includes(' ')) {
         splittedTitle = title.split(' ')
@@ -62,12 +60,11 @@ async function processUrl(url: string, response: NextApiResponse<ExtractArticleM
     }
 
     const threshold = Math.round(splittedTitle.length / 2) < 1 ? 1 : Math.round(splittedTitle.length / 2)
-        
+
+    let finalSplittedTitle: string[] = []
     finalSplittedTitle.push(splittedTitle.slice(0, threshold).toString(), splittedTitle.slice(threshold, splittedTitle.length).toString())
 
-    finalSplittedTitle.forEach(element => {
-        console.log(`finalSplittedTitle ==> ${element}`)
-    });
+    let filteredDocuments: DocumentInterface<Record<string, any>>[] = []
 
     for (const _charTitle of finalSplittedTitle) {
         console.time(`similaritySearch ${_charTitle.replaceAll(',', ' ')}`)
