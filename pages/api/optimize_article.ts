@@ -7,7 +7,7 @@ import { optimizeArticlePrompts } from "./prompts/optimize_article_prompts";
 export default async function handler(request: NextApiRequest, response: NextApiResponse<StandartModel>) {
     const article: string = request.body.article ?? []
 
-    try {    
+    try {
         const result = await chatModel(0.3, 0.8).invoke([
             new SystemMessage(optimizeArticlePrompts),
             new HumanMessage(`

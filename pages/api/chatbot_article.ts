@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { HNSWLib } from "langchain/vectorstores/hnswlib";
+import { HNSWLib } from "@langchain/community/vectorstores/hnswlib";
 import { chatModel, embeddings } from "../helpers/openai_instance";
 import { HumanMessage, SystemMessage, AIMessage } from "langchain/schema";
 import { chatbotArticlePrompts } from "./prompts/chatbot_article_prompts";
@@ -34,7 +34,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
 
         const documents = await vectorStore.similaritySearch('');
         const data = documents.map(element => element.pageContent).toString()
-        const result = await chatModel(0.3, 0.8).call([
+        const result = await chatModel(0.3, 0.8).invoke([
             new SystemMessage(chatbotArticlePrompts(data)),
             ...lastResponseArray,
             new HumanMessage(query),

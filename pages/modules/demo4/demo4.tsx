@@ -4,6 +4,7 @@ import { QueryInput } from "./components/query_input"
 import { ResultContent } from "./components/result_content"
 import { Colors } from "../../helpers/const_strings"
 import { RequestState } from "../../interface/request_state"
+import { SearchItem } from "./components/search_item"
 
 const Demo4 = () => {
     const article = useDemo4Store(state => state.article)
@@ -44,7 +45,7 @@ const Demo4 = () => {
             </div>
             {
                 articleState === RequestState.SUCCESS &&
-                <span style={{ whiteSpace: 'pre-wrap' }}>{result?.content ?? ''}</span>
+                (result?.data ?? []).filter(element => element.similarityDocumentsCount > 0).map((element, index) => <SearchItem data={element} isLast={index === (result?.data ?? []).filter(element => element.similarityDocumentsCount > 0).length - 1} />)
             }
         </div>
     )

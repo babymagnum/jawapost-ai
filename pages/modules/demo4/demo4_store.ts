@@ -1,18 +1,18 @@
 import { create } from "zustand";
 import { RequestState } from "../../interface/request_state";
 import { StandartModel } from "../../api/model/standart_model";
+import { SearchArticleModel } from "../../api/model/search_query_model";
 
 function delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
 
 interface State {
     article: string
     buttonContent: string
     articleError: string
     articleState: RequestState
-    result?: StandartModel
+    result?: SearchArticleModel
     scrollPosition: number
 }
 
@@ -48,7 +48,7 @@ export const useDemo4Store = create<State & Actions>()((set, get) => {
             });
             set(({ articleState: response.status === 200 ? RequestState.SUCCESS : RequestState.ERROR }));
 
-            const data: StandartModel = await response.json();
+            const data: SearchArticleModel = await response.json();
 
             if (response.status !== 200) {
                 alert(data.message ?? 'error!');
@@ -76,14 +76,14 @@ export const useDemo4Store = create<State & Actions>()((set, get) => {
 
             while (get().articleState === RequestState.LOADING) {
                 dot += '.'
-                set(({ buttonContent: `Optimize${dot}` }))
+                set(({ buttonContent: `Search${dot}` }))
 
                 if (dot === '...') dot = ''
                 
                 await delay(500)                            
             }
 
-            set(({ buttonContent: `Optimize` }))
+            set(({ buttonContent: `Search` }))
         }
     })
 })

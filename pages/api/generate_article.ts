@@ -11,7 +11,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
         const userCommand = points.map((element, index) => `${index + 1}. ${element}`).toString()
         console.log(`userCommand ==> ${userCommand}`)
 
-        const result = await chatModel(0.3, 0.8).call([
+        const result = await chatModel(0.3, 0.8).invoke([
             new SystemMessage(generateArticlePrompts),
             new HumanMessage(userCommandPrompts(userCommand)),
         ]);

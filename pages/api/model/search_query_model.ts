@@ -1,11 +1,6 @@
-interface SearchQueryModel {
-    message: string
-    data?: QueryItemModel[]
-}
+import ArticleModel from "../../modules/demo4/model/article_model"
 
-interface QueryItemModel {
-    title: string
-    url: string
-    content: string
-    score: number
+export interface SearchArticleModel {
+    message: string
+    data?: ArticleModel[]
 }

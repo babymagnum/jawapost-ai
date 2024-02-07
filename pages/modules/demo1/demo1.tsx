@@ -11,7 +11,8 @@ const Demo1 = () => {
     const setChatBoxVisible = useDemo1Store(state => state.setChatBoxVisible)    
 
     return (
-        <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden', marginTop: '3vh' }}>
+        <div style={{ flex: 1, flexDirection: 'column', display: 'flex', overflowX: 'hidden' }}>
+            <h1 style={{ marginBottom: 10, marginInline: '10vw' }}>Extract Article</h1>
             <UrlInput />
             <ResultContent />
             <CustomDiv onDivClick={() => setChatBoxVisible(true)} borderRadius={1000} backgroundColor={Colors.genoa} style={{ position: 'absolute', width: 56, height: 56, justifyContent: 'center', alignItems: 'center', display: 'flex', bottom: 24, right: 24 }} children={(<IcChatBot width={26} height={26} fill={Colors.white} />)} />
