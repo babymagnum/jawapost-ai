@@ -7,6 +7,9 @@ import { ExtractArticleModel } from "./model/extract_article_model";
 import { chatModel, embeddings } from "../helpers/openai_instance";
 import { HumanMessage, SystemMessage } from "langchain/schema";
 import { extractDataPrompts } from "./prompts/extract_article_prompts";
+import { Document } from "langchain/document";
+import { DocumentInterface } from "@langchain/core/documents";
+import { string } from "zod";
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<ExtractArticleModel>) {
     const url = request.body.url || '';
@@ -28,15 +31,15 @@ async function processUrl(url: string, response: NextApiResponse<ExtractArticleM
     const title = url.split('/').pop()
     console.log(`title ==> ${title}`)
 
-    const loader = new CheerioWebBaseLoader(url);
+    const loader = new CheerioWebBaseLoader(url)
 
     console.time('loadCherrio')
-    const docs = await loader.load();
+    const docs = await loader.load()
     console.timeEnd('loadCherrio')
 
     const splitter = RecursiveCharacterTextSplitter.fromLanguage("html");
 
-    const sequence = splitter.pipe(new HtmlToTextTransformer());
+    const sequence = splitter.pipe(new HtmlToTextTransformer())
 
     console.time('sequenceDocs')
     const newDocuments = await sequence.invoke(docs);
@@ -48,17 +51,40 @@ async function processUrl(url: string, response: NextApiResponse<ExtractArticleM
     )
     console.timeEnd('registerVectorStore')
 
-    console.time('similaritySearch')
-    const filteredDocuments = await vectorStore.similaritySearch(title)
-    console.timeEnd('similaritySearch')
+    let splittedTitle: string[] = []
+    let filteredDocuments: DocumentInterface<Record<string, any>>[] = []
+    let finalSplittedTitle: string[] = []
+
+    if (title.includes(' ')) {
+        splittedTitle = title.split(' ')
+    } else if (title.includes('-')) {
+        splittedTitle = title.split('-')
+    }
+
+    const threshold = Math.round(splittedTitle.length / 2) < 1 ? 1 : Math.round(splittedTitle.length / 2)
+        
+    finalSplittedTitle.push(splittedTitle.slice(0, threshold).toString(), splittedTitle.slice(threshold, splittedTitle.length).toString())
+
+    finalSplittedTitle.forEach(element => {
+        console.log(`finalSplittedTitle ==> ${element}`)
+    });
+
+    for (const _charTitle of finalSplittedTitle) {
+        console.time(`similaritySearch ${_charTitle.replaceAll(',', ' ')}`)
+        const _filtered = await vectorStore.similaritySearch(_charTitle.replaceAll(',', ' '))
+        filteredDocuments.push(..._filtered)
+        console.timeEnd(`similaritySearch ${_charTitle.replaceAll(',', ' ')}`)
+    }
 
     filteredDocuments.forEach(element => {
         console.log(`filteredDocuments ==> ${element.pageContent}`)
     });
 
+    console.time(`savefilteredDocument`)
     const filteredVectorStore = await HNSWLib.fromDocuments(
         filteredDocuments, embeddings
     )
+    console.timeEnd('savefilteredDocument')
 
     console.time('saveFilteredVectorStore')
     await filteredVectorStore.save("././url-sources/temp-berita");
