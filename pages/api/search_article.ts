@@ -3,7 +3,7 @@ import { embeddings } from "../helpers/openai_instance"
 import { HNSWLib } from "@langchain/community/vectorstores/hnswlib"
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter"
 import ArticleModel, { ArticleChunkItem } from "../modules/demo4/model/article_model"
-import { article1, article2, article3, article4, article5, article6 } from "../../mock_article/articles"
+import { article1, article10, article11, article2, article3, article4, article5, article6, article7, article8, article9 } from "../../mock_article/articles"
 import { SearchArticleModel } from "./model/search_query_model"
 
 export default async function handler(request: NextApiRequest, response: NextApiResponse<SearchArticleModel>) {
@@ -37,6 +37,11 @@ export default async function handler(request: NextApiRequest, response: NextApi
             { id: 4, content: article4 },
             { id: 5, content: article5 },
             { id: 6, content: article6 },
+            { id: 7, content: article7 },
+            { id: 8, content: article8 },
+            { id: 9, content: article9 },
+            { id: 10, content: article10 },
+            { id: 11, content: article11 },
         ]
 
         for (const { index, value } of articleList.map((value, index) => ({ index, value }))) {
@@ -59,7 +64,7 @@ export default async function handler(request: NextApiRequest, response: NextApi
                     console.log(`similarity ==> ${element[1]}`)
                 })
 
-                const _similarDocument = similarity.filter(element => element[1] < 0.1).map(element => element[0])
+                const _similarDocument = similarity.filter(element => element[1] < 0.12).map(element => element[0])
                 console.log(`_similarDocument ==> ${_similarDocument.length}`)
 
                 if (_similarDocument.length > 0) {

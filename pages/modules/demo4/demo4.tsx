@@ -53,7 +53,10 @@ const Demo4 = () => {
                 </button>
             </div>
             {
-                articleState === RequestState.SUCCESS &&
+                articleState !== RequestState.SUCCESS ?
+                null :
+                (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).length === 0 ?
+                <span style={{alignSelf: 'center', marginTop: '5vh', color: Colors.danger}}>Tidak ada artikel yang serupa!</span> :
                 (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).map((element, index) => <SearchItem data={element} isLast={index === (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).length - 1} />)
             }
         </div>

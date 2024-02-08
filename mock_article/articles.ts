@@ -103,3 +103,107 @@ Sementara itu, secara spasial, pertumbuhan ekonomi triwulan IV-2023 di sebagian 
 export const article6 = `
 JAKARTA, KOMPAS.com - Bank Indonesia (BI) memproyeksikan pertumbuhan ekonomi nasional yang positif berlanjut pada tahun ini. Optimisme ini diusung dengan melihat sejumlah faktor pendukung seperti pelaksanaan pemilihan umum (pemilu) hingga pembangunan Ibu Kota Nusantara (IKN). Asisten Gubernur BI Erwin Haryono mengatakan, bank sentral memproyeksi, pertumbuhan ekonomi berada di kisaran 4,7 - 5,5 persen pada 2024. Pertumbuhan masih akan didukung oleh permintaan domestik utamanya berlanjutnya pertumbuhan konsumsi. "Termasuk dampak positif penyelenggaraan pemilu, serta peningkatan investasi khususnya bangunan sejalan dengan berlanjutnya pembangunan Proyek Strategis Nasional (PSN) termasuk Ibu Kota Nusantara (IKN)," tutur dia, dalam keterangannya, Selasa (6/2/2024). Baca juga: Ramal Nasib Rupiah, Bos BI: Kami Pakai Ekonometrika, Bukan Ahli Nujum Sementara itu, sumber pertumbuhan ekonomi lainnya, yakni kinerja ekspor, diprediksi belum akan berkontribusi signifikan. Hal ini sebagai dampak ekonomi global yang belum kuat dan harga komoditas yang menurun. "Bank Indonesia akan terus memperkuat sinergi stimulus fiskal pemerintah dengan stimulus makroprudensial Bank Indonesia untuk mendorong pertumbuhan ekonomi, khususnya dari sisi permintaan domestik," ujar Erwin. Bank sentral menilai, di tengah perlambatan ekonomi global, ekonomi Indonesia masih terjaga. Berdasarkan data Badan Pusat Statistik (BPS), produk domestik bruto (PDB) Indonesia masih tumbuh 5,05 persen pada 2023. Baca juga: Daftar 10 Provinsi dengan Pertumbuhan Ekonomi Paling Tinggi 2023 Indonesia mampu menjaga laju pertumbuhan ekonomi 5 persen secara tahunan, seiring dengan tumbuhnya PDB sebesar 5,04 persen pada kuartal IV-2023. Erwin bilang, pertumbuhan itu didukung oleh hampir seluruh komponen PDB. Pertama, konsumsi rumah tangga tumbuh sebesar 4,47 persen. Pertumbuhan ini seiring dengan kenaikan mobilitas terutama pada Hari Besar Keagamaan Nasional (HBKN) Natal dan Tahun Baru, daya beli masyarakat yang stabil, serta keyakinan konsumen yang meningkat. Kemudian, konsumsi lembaga nonprofit yang melayani rumah tangga (LNPRT) tumbuh tinggi sebesar 18,11 persen. Ini didorong peningkatan aktivitas persiapan pemilu. Baca juga: Berkat Hilirisasi, Maluku Utara Jadi Provinsi dengan Pertumbuhan Ekonomi Tertinggi Lalu, konsumsi pemerintah meningkat dengan tumbuh sebesar 2,81 persen didorong oleh belanja barang dan belanja pegawai. Selanjutnya, investasi tumbuh sebesar 5,02 persen terutama ditopang oleh investasi bangunan seiring berlanjutnya pembangunan infrastruktur dan meningkatnya aktivitas penanaman modal. Sementara itu, ekspor tumbuh sebesar 1,64 persen ditopang oleh permintaan mitra dagang utama yang tetap tumbuh positif di tengah penurunan harga komoditas ekspor unggulan, serta membaiknya ekspor jasa seiring dengan peningkatan jumlah wisatawan mancanegara.
 `
+
+export const article7 = `
+Pembangunan Gedung Kantor Presiden di Ibu Kota Nusantara (IKN) sudah mencapai 72,19 persen. Rencananya, Presiden Joko Widodo atau Jokowi akan melaksanakan upacara peringatan Kemerdekaan Republik Indonesia ke-79 pada 17 Agustus 2024 di IKN.
+
+Juru Bicara otorita IKN Troy Pantouw menjelaskan, pPerkembangan pembangunan gedung pemerintah dan fasilitas ASN telah mengalami kemajuan per Januari 2024.
+
+Sementara bangunan Gedung Sekretariat Presiden dan fasilitas pendukungnya di Ibu Kota Negara, lanjut Troy, progresnya telah mencapai 58,21 persen.
+
+Progres tersebut turut diikuti oleh pembangunan bangunan gedung dan Kawasan Blok Kantor Kementerian sedang berlangsung. Perkembangan signifikan juga terjadi di sektor telekomunikasi dengan penetapan PT Indonesia Comnet Plus dan PT Telkom Indonesia sebagai pemegang hak perlintasan penyedia infrastruktur telekomunikasi.
+
+"Sebagai langkah jangka panjang, Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR) telah membangun infrastruktur penyediaan air minum, termasuk Bendungan Sepaku Semoi berkapasitas 2.500 liter per detik dan rencana pembangunan Intake Sepaku berkapasitas 3.000 liter per detik yang ditargetkan mulai dioperasikan pada tahun 2024," kata Troy.
+
+Semua upaya ini diarahkan untuk mendukung visi IKN sebagai kota yang layak huni yang akan mulai operasional pada Agustus 2024, seiring dengan rencana pemindahan aparatur sipil negara (ASN).
+
+Pembangunan Kota Nusantara telah berjalan sesuai target yang telah ditetapkan, capaian itu sebagai bukti komitmen mewujudkan ibu kota negara baru Indonesia, yang dibangun di sebagian wilayah Kabupaten Penajam Paser Utara dan Kabupaten Kutai Kartanegara di Provinsi Kalimantan Timur.
+
+Penyelesaian pengerjaan berbagai sarana prasarana di Kota Nusantara sesuai target untuk mengukur sejarah baru, yaitu melaksanakan upacara peringatan Kemerdekaan Republik Indonesia ke-79 pada 17 Agustus 2024 di ibu kota negara masa depan Indonesia itu.
+
+Perayaan HUT Kemerdekaan RI pada 17 Agustus 2024 di IKN Nusantara, Kalimantan Timur, menjadi titik awal perpindahan ibu kota negara, secara bertahap dari DKI Jakarta ke Nusantara.
+`
+
+export const article8 = `
+Jadwal Tes Pramusim MotoGP 2024 Hari Ketiga di Sirkuit Sepang, Malaysia dapat Anda ketahui di artikel ini. Hari ketiga tes pramusim MotoGP 2024 yang digelar pada Kamis (8/2/2024) merupakan hari terakhir tiga hari tes pramusim di Sepang.
+
+Para pembalap jelas akan memaksimalkan hari terakhir di Sepang untuk mencoba sejumlah perangkat baru atau sekadar memahami motor mereka lebih jauh. Seperti halnya Marc Marquez yang pada tes pramusim MotoGP 2024 di Malaysia ini hanya fokus mengenai motor Desmosedici GP23.
+
+baca juga:
+
+Hasil Tes Pramusim MotoGP 2024 Hari Kedua: Enea Bastianini Tercepat, Pecahkan Rekor Lap di Sepang!
+Sebagai pembalap anyar Gresini Ducati, Marquez memiliki PR utama, yakni memahami motor Ducati. Ia harus bisa segera beradaptasi dengan kuda besi tim pabrikan asal Italia tersebut sebelum MotoGP 2024 benar-benar bergulir.
+
+Selama dua hari mencoba berkendara dengan motor Ducati, Marquez menyadari perbedaan besar antara Desmosedici dengan RC213V milik Honda. Ia pun mengaku masih terbiasa berkendara seperti saat masih di Honda.
+
+Marc Marquez
+
+Marquez menyadari harus melupakan gaya balapan tersebut. Sebab ia menilai perlu gaya balapan berbeda untuk bisa menaklukkan motor Ducati.
+
+“Secara umum saya masih agak kaku saat mengendarai motor (Ducati), tapi hari ini saya mulai sedikit menikmati berkendara,” kata Marc Marquez dikutip dari Speedweek, Kamis (8/2/2024).
+`
+
+export const article9 = `
+Rider Ducati Enea Bastianini mengungguli Jorge Martin untuk tampil sebagai yang tercepat tes MotoGP 2024 di Sepang pada hari kedua. Marc Marquez ada di posisi ke-14.
+Di sirkuit Sepang, Malaysia, Rabu (7/2/2024), pebalap Italia itu mencatatkan waktu terbaik satu menit 57,134 detik. Bestia lebih cepat 0,139 detik dari Martin yang finis kedua. Di sesi ini Bestia melahap 47 putaran, dengan mencatatkan waktu paling sip pada lap kedua terakhir.
+
+Menyusul kemudian rider KTM, Brad Binder di posisi ketiga. Pebalap Afrika Selatan itu membukukan waktu satu 0,193 detik lebih lambat dari Enea Bastianini.
+
+Alex Espargaro menghuni posisi keempat. Rider Aprilia itu melahap 54 putaran, mencatatkan waktu terbaik 0, 312 detik lebih lambat dari Martin.
+
+Pebalap Gresini, Marc Marquez, ada di posisi ke-14 dengan selisih 0,845 detik dari Martin. Sedangkan rider Yamaha, Fabio Quartararo ada di posisi ke-11.
+
+1 Enea Bastianini ITA Ducati Lenovo (GP24) 1m 57.134s 46/47
+2 Jorge Martin SPA Pramac Ducati (GP24) +0.139s 9/56
+3 Brad Binder RSA Red Bull KTM (RC16) +0.193s 11/42
+4 Aleix Espargaro SPA Aprilia Racing (RS-GP24) +0.312s 15/54
+5 Francesco Bagnaia ITA Ducati Lenovo (GP24) +0.335s 14/52
+6 Fabio Di Giannantonio ITA VR46 Ducati (GP23) +0.485s 9/54
+7 Alex Marquez SPA Gresini Ducati (GP23) +0.538s 10/56
+8 Pedro Acosta SPA Red Bull GASGAS Tech3 (RC16)* +0.592s 16/52
+9 Marco Bezzecchi ITA VR46 Ducati (GP23) +0.733s 10/53
+10 Joan Mir SPA Repsol Honda (RC213V) +0.738s 8/39
+11 Fabio Quartararo FRA Monster Yamaha (YZR-M1) +0.754s 7/53
+12 Johann Zarco FRA LCR Honda (RC213V) +0.877s 15/41
+13 Alex Rins SPA Monster Yamaha (YZR-M1) +0.976s 49/50
+14 Marc Marquez SPA Gresini Ducati (GP23) +0.984s 27/72
+15 Jack Miller AUS Red Bull KTM (RC16) +1.166s 13/59
+16 Takaaki Nakagami JPN LCR Honda (RC213V) +1.238s 21/37
+17 Luca Marini ITA Repsol Honda (RC213V) +1.260s 12/41
+18 Maverick Viñales SPA Aprilia Racing (RS-GP24) +1.322s 17/62
+19 Miguel Oliveira POR Trackhouse Aprilia (RS-GP24) +1.415s 18/56
+20 Augusto Fernandez SPA Red Bull GASGAS Tech3 (RC16) +1.781s 8/50
+21 Cal Crutchlow GBR Yamaha Test Rider (YZR-M1) +1.856s 11/59
+22 Lorenzo Savadori ITA Trackhouse Aprilia (RS-GP) +2.542s 26/48
+23 Michele Pirro ITA Pramac Ducati (GP24) +2.568s 17/49
+`
+
+export const article10 = `
+- Ferrari telah mengumumkan perekrutan Lewis Hamilton untuk tahun 2025. Dia datang untuk menggantikan Carlos Sainz.
+"Scuderia Ferrari dengan bangga mengumumkan bahwa Lewis Hamilton akan bergabung dengan tim pada 2025, dengan kontrak multi-tahun (kontrak tahun jamak)," bunyi pernyataan tim berlogo Kuda Jingkrak itu, Jumat (2/2/2024) dini hari WIB.
+
+Kedatangan Hamilton dari Mercedes sekaligus menggeser posisi Carlos Sainz. Ferrari memastikan musim 2024 menjadi akhir kebersamaan dengan Carlos Sainz.
+
+"Kami masih punya satu musim lagi untuk memberikan segalanya bersama-sama Carlos Sainz," bunyi kicauan Scuderia Ferrari di akun X.
+
+Hamilton adalah juara dunia tujuh kali dan merupakan pembalap tersukses dalam sejarah Formula 1 dengan 103 kemenangan dan 104 pole position. Michael Schumacher adalah satu-satunya pembalap lain dengan tujuh gelar dunia.
+
+Namun, keputusan Ferrari memboyong Hamilton sejatinya perlu dipertanyakan. Hamilton belum pernah menjuarai balapan sejak Desember 2021.
+`
+
+export const article11 = `
+Max Verstappen mengakhiri Formula 1 2023 dengan mantap. Pebalap Red Bull Racing itu memenangi balapan F1 GP Abu Dhabi 2023.
+Pada balapan yang dihelat di Sirkuit Yas Marina, Minggu (26/11/2023) malam WIB, Verstappen yang meraih pole langsung tancap gas sedari lap pertama.
+
+Meski sempat mendapat gangguan dari pebalap Ferrari Charles Leclerc di tikungan awal, Verstappen tak tergoyahkan hingga akhir balapan yang menuntaskan 58 lap.
+
+Verstappen tampil dominan dengan unggul 17,993 detik dari Leclerc yang finis kedua. Pebalap Mercedes GP George Russell melengkapi podium dengan finis ketiga.
+
+Sergio Perez selaku rekan setim Verstappen finis keempat diikuti Pebalap McLaren Lando Norris di posisi kelima. Oscas Piastri, Fernando Alonso, Yuki Tsunoda, Lewis Hamilton, dan Lance Stroll menempati posisi keenam hingga kesepuluh.
+
+Pebalap Ferrari lainnya Carlos Sainz Jr gagal menambah poin karena cuma finis ke-18. Dengan demikian, F1 2023 dituntaskan dengan Verstappen sebagai juara dunia lewat 575 poin.
+
+Verstappen tampil dominan dengan meraih 19 kemenangan dari 22 seri. Tiga sisanya dibagi ke Perez (dua kali) dan Sains (sekali).
+
+Di posisi kedua Perez dengan 285 poin diikuti Lewis Hamilton (234 poin), Fernando Alonso dan Charles Leclerc (206 poin).
+`
