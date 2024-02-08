@@ -31,12 +31,12 @@ export default async function handler(request: NextApiRequest, response: NextApi
         console.timeEnd('assignVectorStore')
 
         const articleList: ArticleModel[] = [
-            { content: article1 },
-            { content: article2 },
-            { content: article3 },
-            { content: article4 },
-            { content: article5 },
-            { content: article6 },
+            { id: 1, content: article1 },
+            { id: 2, content: article2 },
+            { id: 3, content: article3 },
+            { id: 4, content: article4 },
+            { id: 5, content: article5 },
+            { id: 6, content: article6 },
         ]
 
         for (const { index, value } of articleList.map((value, index) => ({ index, value }))) {

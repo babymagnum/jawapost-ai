@@ -54,7 +54,7 @@ const Demo4 = () => {
             </div>
             {
                 articleState === RequestState.SUCCESS &&
-                (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).map((element, index) => <SearchItem data={element} index={index} isLast={index === (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).length - 1} />)
+                (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).map((element, index) => <SearchItem data={element} isLast={index === (result?.data ?? []).filter(element => element.similarDocumentsCount > 0).length - 1} />)
             }
         </div>
     )
